@@ -53,7 +53,6 @@ Mit Docker Compose kann man verschiedene Container miteinander verknüpfen, um e
 
 Die YAML-Datei muss immer den Namen `docker-compose` besitzen. in ihr werden alle Parameter des Docker-Compose mitgegeben
 
-d
 
 Die Yaml Datei kann etwa so aussehen:
 
@@ -87,4 +86,25 @@ secrets:
   pw:
    file pw.txt
  ```
- 
+### Ausführen des Docker Compose:
+Docker compose ist nicht auf jeder VM schon vorinstalliert. Um es zu installieren verwenden wir diesen Befehl:
+
+```txt
+Sudo curl -L https://github.com/docker/compose/releases/download/1.24.0/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
+```
+Danach ist es wichtig, dem User Berechtigung auf den Ordner zu geben, in dem die Datei liegt:
+
+```txt
+sudo chmod +x /usr/local/bin/docker-compose
+```
+```txt
+docker-compose-v
+```
+
+```txt
+docker compose up-d
+```
+
+```txt
+docker-compose down
+```
