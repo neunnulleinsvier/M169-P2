@@ -112,3 +112,9 @@ docker-compose -v
 ```txt
 docker-compose down
 ```
+# Beenden des compose-setup
+Als erstes muss man in das im terminal ins Verzeichnis Navigieren, in dem das Setup operiert.
+Das Setup kann mit folgendem Befehl gestoppt werden:
+```txt
+docker-compose down
+```
