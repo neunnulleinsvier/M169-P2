@@ -58,33 +58,34 @@ Die Yaml Datei kann etwa so aussehen:
 
 ```txt
 services:
- wordpress:
-  image: wordpress
-  links:
-   - mariadb:mysql
-  environment: 
-   - WORDPRESS_DB_PASSWORD_FILE=/run/secrets/pw
-   - WORDPRESS_DB_USER=root
- ports:
-    - "127.0.0.1:80:80"
- volumes:
-   - ./html:/var/www/html
- secrets:
-   - pw 
+  wordpress:
+    image: wordpress
+    links:
+      - mariadb:mysql
+    environment:
+      - WORDPRESS_DB_PASSWORD_FILE=/run/secrets/pw
+      - WORDPRESS_DB_USER=root
+    ports:
+      - "127.0.0.1:80:80"
+    volumes:
+      - ./html:/var/www/html
+    secrets: 
+      - pw 
 
- mariadb:
-  image: mariadb
-  environment:
-    - MYSQL_ROOT_PASSWORD_FILE=/run/secrets/pw
-    - MYSQL_DATABASE=wordpress
- volumes:
-   - ./database:/var/lib/mysql
- secrets:
-   - pw 
+  mariadb:
+    image: mariadb
+    environment:
+      - MYSQL_ROOT_PASSWORD_FILE=/run/secrets/pw
+      - MYSQL_DATABASE=wordpress
+    volumes:
+      - ./database:/var/lib/mysql
+    secrets:
+      - pw 
 
 secrets:
   pw:
-   file pw.txt
+    file: pw.txt
+
  ```
 ### Ausführen des Docker Compose:
 Docker compose ist nicht auf jeder VM schon vorinstalliert. Um es zu installieren verwenden wir diesen Befehl:
@@ -97,12 +98,15 @@ Danach ist es wichtig, dem User Berechtigung auf den Ordner zu geben, in dem die
 ```txt
 sudo chmod +x /usr/local/bin/docker-compose
 ```
-```txt
-docker-compose-v
-```
+
+Ausühren 
 
 ```txt
 docker compose up-d
+```
+
+```txt
+docker-compose-v
 ```
 
 ```txt
