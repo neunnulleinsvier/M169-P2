@@ -90,7 +90,7 @@ secrets:
 Docker compose ist nicht auf jeder VM schon vorinstalliert. Um es zu installieren verwenden wir diesen Befehl:
 
 ```txt
-Sudo curl -L https://github.com/docker/compose/releases/download/1.24.0/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
+sudo curl -L https://github.com/docker/compose/releases/download/1.24.0/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
 ```
 Danach ist es wichtig, dem User Berechtigung auf den Ordner zu geben, in dem die Datei liegt:
 
