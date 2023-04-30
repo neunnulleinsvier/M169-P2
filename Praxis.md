@@ -102,11 +102,11 @@ sudo chmod +x /usr/local/bin/docker-compose
 Ausühren 
 
 ```txt
-docker compose up-d
+docker compose up -d
 ```
 
 ```txt
-docker-compose-v
+docker-compose -v
 ```
 
 ```txt
