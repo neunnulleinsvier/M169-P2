@@ -100,11 +100,10 @@ sudo chmod +x /usr/local/bin/docker-compose
 ```
 
 Ausühren 
-
 ```txt
 docker compose up -d
 ```
-
+Mit `docker-compose -v` werden alle laufenden compose setups angezeigt
 ```txt
 docker-compose -v
 ```
