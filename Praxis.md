@@ -14,6 +14,18 @@ Die Syntax eines Dockerfiles ist ein Satz von Anweisungen, die Docker verwendet,
 * `EXPOSE`: Offenbart einen Port innerhalb des Containers.
 * `CMD` oder `ENTRYPOINT`: Definiert den Befehl, der beim Starten des Containers ausgeführt wird.
 
+### Chaining
+In einem Dockerfile wird das Symbol "&" normalerweise verwendet, um mehrere Befehle in einer einzigen Zeile zu kombinieren. Diese Technik wird als "chaining" bezeichnet und hilft, die Größe des Docker-Images zu reduzieren, indem unnötige Schritte und temporäre Dateien vermieden werden.
+
+Ein Beispiel dafür ist das Verketten mehrerer Befehle, um den Container zu aktualisieren und erforderliche Pakete zu installieren. Anstatt dies in zwei separaten Zeilen zu tun, kann man diese in einer Zeile zusammenführen, indem man das Symbol "&" verwendet:
+```txt
+RUN apt-get update && \
+    apt-get install -y package1 package2 package3
+```
+In diesem Beispiel wird der Container zuerst aktualisiert und dann werden die Pakete installiert. Durch die Verwendung des `&` Symbols kann man diese beiden Schritte in einer Zeile kombinieren.
+
+Es ist jedoch zu beachten, dass das Verketten von Befehlen mit "&" in manchen Fällen zu Problemen führen kann, insbesondere wenn eine der Anweisungen fehlschlägt. In diesen Fällen ist es möglicherweise besser, separate Zeilen zu verwenden, um die Ausführung der Befehle sicherzustellen.
+
 Hier ist eine Syntax, um eine Webseite zu hosten:
 
 ```txt
