@@ -87,6 +87,8 @@ secrets:
     file: pw.txt
 
  ```
+ 
+Tipp: Korrigiere code mit: https://www.yamllint.com/
 ### Ausführen des Docker Compose:
 Docker compose ist nicht auf jeder VM schon vorinstalliert. Um es zu installieren verwenden wir diesen Befehl:
 
