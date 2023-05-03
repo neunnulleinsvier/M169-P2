@@ -39,5 +39,13 @@ liste:
   - eintrag2
   - eintrag3
 ```
+## Key-Values auf gleicher linie definieren:
+
+In Docker Compose, you can define key-value pairs on a single line by separating them with a space. For example, to define the environment variables for a service, you could write:
+```txt
+environment:
+KEY1: value1, KEY2: value2
+```
+
 
 
